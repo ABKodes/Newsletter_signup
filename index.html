@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <title>Navigation signup</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+        font-family: Roboto;
+    }
+    p {
+        color:#242742;
+    }
+    ul li {
+        color:#242743;
+    }
+    input:focus {
+        outline: none;
+    }
+    .invalid-input {
+        border-color: #CB041D;
+    }
+    .invalid-input::placeholder {
+        color: #CB041D;
+    }
+    .invalid-input-content {
+            color: #CB041D;
+    }
+  </style>
+</head>
+<body>
+    <main class="w-screen h-screen bg-[#36384e] flex items-center justify-center block" id="form">
+        <div class="flex items-center justify-center w-6/12 h-10/12 bg-white m-auto rounded-3xl s:w-10/12">
+            <img src="./images/illustration-sign-up-mobile.svg" class="block md:hidden" alt="">
+            <!-- First column -->
+            <div class="items-center md:order-first">
+                <div class=" w-full h-full leading-loose px-8">
+                    <h1 class="font-extrabold text-4xl text-[#242742] mb-5 text-start">Stay Updated!</h1>
+                    <p>Join 60,000+ product managers receiving monthly updates on</p>
+                    <ul class="my-5">
+                        <li>
+                            <img src="./images/icon-list.svg" class="inline" alt="">
+                            <span>Product discovery and building what matters</span>
+                        </li>
+                        <li>
+                            <img src="./images/icon-list.svg" class="inline" alt="">
+                            <span>Measuring to ensure updates are a success</span>   
+                        </li>
+                        <li>
+                            <img src="./images/icon-list.svg" class="inline" alt="">
+                            <span>And much more</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between">
+                        <label for="email" class="text-xs text-[#242742] font-bold">Email address</label>
+                        <span id="errorMessage" class="text-[#CB041D] text-xs font-bold text-right hidden">Valid email required</span>
+                    </div>
+                    <input type="email" name="email" id="email" placeholder="email@company.com" class="p-1 px-5 my-3 w-full border border-[#b4b4b3] rounded-xl">
+                    <button class="hover:text-white hover:bg-[#ff6257] bg-[#242742] w-full text-white font-bold text-s py-2 rounded-lg my-3 " id="submit"> Subscribe to monthly newsletter</button>
+                </div>
+            </div>          
+            <!-- Second column -->
+            <div>
+                <img src="./images/illustration-sign-up-desktop.svg" class="p-4 hidden md:block" alt="">
+            </div>
+        </div>
+    </main>
+
+    <main class="w-screen h-screen bg-[#36384e] flex items-center justify-center hidden" id="successMessage">
+        <div class="w-3/12 h-10/12 bg-white flex justify-center rounded-3xl p-5">
+            <div class="p-5">
+                <img src="./images/icon-success.svg" alt="">
+                <span class="text-4xl text-[#363848] font-extrabold block my-5">Thanks for subscribing</span>
+                <div class="my-3 text-center">
+                    <p class="block text-justify font-light">A confirmation email has been sent to <span class="font-bold" id="successEmail"></span> . Please open it and click the button inside to confirm your subscription </p>
+                </div>
+                <button class="hover:text-white hover:bg-[#ff6257] bg-[#242742] w-full text-white font-bold text-s py-2 rounded-lg my-3 " id="dismissButton">Dismiss Message</button>
+            </div>
+            </div>         
+        </div>  
+    </main>
+</body>
+<script src="script.js"></script>
+</html> 
